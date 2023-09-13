@@ -8,6 +8,8 @@ type Task {
   dueDate: String!
   status: String!
   description: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type Query {
