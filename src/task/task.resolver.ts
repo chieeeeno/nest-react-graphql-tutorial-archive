@@ -13,8 +13,11 @@ export class TaskResolver {
     return await this.taskService.getTasks();
   }
 
-  @Mutation(() => Task)
-  createTask(@Args('createTaskInput') createTaskInput: CreateTaskInput): Task {
-    return this.taskService.createTask(createTaskInput);
+  @Mutation(() => TaskModel)
+  async createTask(
+    @Args('createTaskInput') createTaskInput: CreateTaskInput,
+  ): Promise<Task> {
+    return await this.taskService.createTask(createTaskInput);
+  }
   }
 }
